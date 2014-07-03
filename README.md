@@ -1,6 +1,8 @@
 Sylius [![Build status...](https://secure.travis-ci.org/Sylius/Sylius.png?branch=master)](http://travis-ci.org/Sylius/Sylius) [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/Sylius/Sylius/badges/quality-score.png?s=f6d89b8aad6e15cab61134e7c0544ee1313f7f31)](https://scrutinizer-ci.com/g/Sylius/Sylius/)
 ======
 
+This is a proxy fork from the original Sylius to be used in Sedona projects. Allow to fix bugs/BC before upgrading to new versions.
+
 Sylius is an open source e-commerce solution for **PHP**, based on the [**Symfony2**](http://symfony.com) framework.
 
 Ultimate goal of the project is to create a webshop engine, which is user-friendly, *loved* by developers and has a helpful community.
