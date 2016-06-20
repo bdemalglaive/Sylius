@@ -60,7 +60,7 @@ class AddressController extends FOSRestController
             $manager->persist($user);
             $manager->flush();
 
-            $this->addFlash('success', 'sylius.account.address.create');
+            $this->addFlashAddress('success', 'sylius.account.address.create');
 
             return $this->redirectToIndex();
         }
@@ -91,7 +91,7 @@ class AddressController extends FOSRestController
             $manager->persist($user);
             $manager->flush();
 
-            $this->addFlash('success', 'sylius.account.address.update');
+            $this->addFlashAddress('success', 'sylius.account.address.update');
 
             return $this->redirectToIndex();
         }
@@ -123,7 +123,7 @@ class AddressController extends FOSRestController
         $manager->persist($user);
         $manager->flush();
 
-        $this->addFlash('success', 'sylius.account.address.delete');
+        $this->addFlashAddress('success', 'sylius.account.address.delete');
 
         return $this->redirectToIndex();
     }
@@ -147,11 +147,11 @@ class AddressController extends FOSRestController
         if ('billing' === $type) {
             $user->setBillingAddress($address);
 
-            $this->addFlash('success', 'sylius.account.address.set_as_billing');
+            $this->addFlashAddress('success', 'sylius.account.address.set_as_billing');
         } elseif ('shipping' === $type) {
             $user->setShippingAddress($address);
 
-            $this->addFlash('success', 'sylius.account.address.set_as_shipping');
+            $this->addFlashAddress('success', 'sylius.account.address.set_as_shipping');
         } else {
             throw new NotFoundHttpException();
         }
@@ -194,7 +194,7 @@ class AddressController extends FOSRestController
         return $this->redirect($this->generateUrl('sylius_account_address_index'));
     }
 
-    private function addFlash($type, $message)
+    private function addFlashAddress($type, $message)
     {
         $translator = $this->get('translator');
         $this->get('session')->getFlashBag()->add($type, $translator->trans($message, array(), 'flashes'));
